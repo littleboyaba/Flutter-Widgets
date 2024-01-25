@@ -21,25 +21,23 @@ class HomeActivity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       //backgroundColor: Color(0xFF338930),
       backgroundColor: Colors.grey,
       body: Center(
-        child: Text(
-          "Hello Flutter, How are you doing? Hope you are doing well? Yeah! about that, things are doing upside down",
-          textAlign: TextAlign.justify,
-          maxLines: 3,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            backgroundColor: Colors.teal,
-            decoration: TextDecoration.underline,
-            wordSpacing: 3,
-            letterSpacing: 2,
-            height:2,
-          ),
+        child: Image.asset(
+          'assets/images/tree_path.jpg',
+          height: 600,
+          width: 300,
+          fit: BoxFit.scaleDown,
+          // fit: BoxFit.fill,
+          // fit: BoxFit.contain,
+          // fit: BoxFit.cover,
+          // fit: BoxFit.fitHeight,
+          // fit: BoxFit.fitWidth,
+          repeat: ImageRepeat.repeat,
+          //repeat: ImageRepeat.repeatX, // repeat image on X axis
+          //repeat: ImageRepeat.repeatY, // repeat image on Y axis
         ),
       ),
     );
