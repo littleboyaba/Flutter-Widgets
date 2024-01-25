@@ -40,6 +40,7 @@ class HomeActivity extends StatelessWidget {
             letterSpacing: 2,
             height:2,
           ),
+          // just a comment
         ),
       ),
     );
