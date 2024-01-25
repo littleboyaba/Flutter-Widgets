@@ -22,22 +22,21 @@ class HomeActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('AppBar Title'),
+        backgroundColor: Colors.blue,
+        elevation: 3,
+        leading: const Icon(
+          Icons.home,
+          color: Colors.white,
+          size: 28,
+        ),
+      ),
       //backgroundColor: Color(0xFF338930),
-      backgroundColor: Colors.grey,
-      body: Center(
-        child: Image.asset(
-          'assets/images/tree_path.jpg',
-          height: 600,
-          width: 300,
-          fit: BoxFit.scaleDown,
-          // fit: BoxFit.fill,
-          // fit: BoxFit.contain,
-          // fit: BoxFit.cover,
-          // fit: BoxFit.fitHeight,
-          // fit: BoxFit.fitWidth,
-          repeat: ImageRepeat.repeat,
-          //repeat: ImageRepeat.repeatX, // repeat image on X axis
-          //repeat: ImageRepeat.repeatY, // repeat image on Y axis
+      backgroundColor: Colors.white70,
+      body: const Center(
+        child: Text(
+          "Its All About AppBar",
         ),
       ),
     );
