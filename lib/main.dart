@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +25,7 @@ class HomeActivity extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Show Dialog'),
+        title: const Text('AppBar'),
         backgroundColor: Colors.blue,
         elevation: 3,
         leading: const Icon(
@@ -34,63 +36,43 @@ class HomeActivity extends StatelessWidget {
       ),
       //backgroundColor: Color(0xFF338930),
       backgroundColor: Colors.white70,
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Container(
-          color: Colors.teal,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  color: Colors.deepPurple,
-                  height: 250,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            'Dialog',
-                            style: TextStyle(
-                                color: Colors.deepOrange, fontSize: 26),
-                          ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              // showAboutDialog(context: context);
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    title: const Text('Your Title'),
-                                    content: const Text('Your body content'),
-                                    actions: [
-                                      ElevatedButton(
-                                        onPressed: () {},
-                                        child: const Text('Cancel'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            },
-                            child: const Text('Tap'),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          const Text(
+            'showModalBottomSheet',
+            style: TextStyle(
+                color: Colors.black, fontSize: 26),
           ),
-        ),
+          const SizedBox(
+            height: 30,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              showModalBottomSheet(context: context, builder: (context){
+                return  Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  children: const [
+                     Row(
+                       mainAxisSize: MainAxisSize.max,
+                       mainAxisAlignment: MainAxisAlignment.center,
+                       children: [
+                         Text('Welcome'),
+                       ],
+                     ),
+                  ],
+                );
+              },
+                backgroundColor: Colors.blueGrey,
+                isDismissible: false, // if ture tapping outside of the bottom sheet will close bottom sheet.
+                barrierColor: Colors.yellow,
+              );
+            },
+            child: const Text('Tap'),
+          ),
+        ],
       ),
     );
   }
