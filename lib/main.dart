@@ -23,7 +23,7 @@ class HomeActivity extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AppBar Title'),
+        title: const Text('Show Dialog'),
         backgroundColor: Colors.blue,
         elevation: 3,
         leading: const Icon(
@@ -54,7 +54,7 @@ class HomeActivity extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            'Elevated Button',
+                            'Dialog',
                             style: TextStyle(
                                 color: Colors.deepOrange, fontSize: 26),
                           ),
@@ -63,9 +63,24 @@ class HomeActivity extends StatelessWidget {
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              showAboutDialog(context: context);
+                              // showAboutDialog(context: context);
+                              showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    title: const Text('Your Title'),
+                                    content: const Text('Your body content'),
+                                    actions: [
+                                      ElevatedButton(
+                                        onPressed: () {},
+                                        child: const Text('Cancel'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
                             },
-                            child: const Text('Tap Me Now'),
+                            child: const Text('Tap'),
                           ),
                         ],
                       ),
