@@ -34,54 +34,47 @@ class HomeActivity extends StatelessWidget {
       ),
       //backgroundColor: Color(0xFF338930),
       backgroundColor: Colors.white70,
-      body: Container(
-        color: Colors.red,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            const Text("Mango"),
-            const Text("Orange"),
-            const Text('CocoNut'),
-            const Text("Pina apple"),
-            Container(
-              color: Colors.green,
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text("2nd Row: "),
-                  Text("Rose "),
-                  Text("Lilac "),
-                  Text("Red Flower"),
-                ],
-              ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Container(
+          color: Colors.teal,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  color: Colors.deepPurple,
+                  height: 250,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'Elevated Button',
+                            style: TextStyle(
+                                color: Colors.deepOrange, fontSize: 26),
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Your logic here.
+                            },
+                            child: const Text('Tab Me Now'),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Container(
-              color: Colors.grey,
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Text('Honda'),
-                  const Text('Mazda'),
-                  const Text('Toyota'),
-                  Image.asset('assets/images/tree_path.jpg', height: 100, width: 100,),
-                ],
-              ),
-            ),
-            Container(
-              color: Colors.teal,
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Image.asset('assets/images/flower.jpg', height: 100, width: 100,),
-                  const Text('3rd Row with a flower')
-                ],
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
