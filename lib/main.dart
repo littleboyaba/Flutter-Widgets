@@ -63,7 +63,7 @@ class HomeActivity extends StatelessWidget {
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              // Your logic here.
+                              showAboutDialog(context: context);
                             },
                             child: const Text('Tap Me Now'),
                           ),
