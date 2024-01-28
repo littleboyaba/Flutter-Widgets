@@ -35,44 +35,30 @@ class HomeActivity extends StatelessWidget {
         ),
       ),
       //backgroundColor: Color(0xFF338930),
-      backgroundColor: Colors.white70,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          const Text(
-            'showModalBottomSheet',
-            style: TextStyle(
-                color: Colors.black, fontSize: 26),
+      body: Center(
+        child: RichText(
+          text: TextSpan(
+            text: 'Flutter ',
+            style: TextStyle(color: Colors.purple, fontSize: 24),
+            children: const [
+              TextSpan(
+                text: 'Rich ',
+                style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
+              ),
+              TextSpan(
+                text: 'Text',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 20,
+                  decoration: TextDecoration.lineThrough,
+                ),
+              )
+            ],
           ),
-          const SizedBox(
-            height: 30,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              showModalBottomSheet(context: context, builder: (context){
-                return  Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: const [
-                     Row(
-                       mainAxisSize: MainAxisSize.max,
-                       mainAxisAlignment: MainAxisAlignment.center,
-                       children: [
-                         Text('Welcome'),
-                       ],
-                     ),
-                  ],
-                );
-              },
-                backgroundColor: Colors.blueGrey,
-                isDismissible: false, // if ture tapping outside of the bottom sheet will close bottom sheet.
-                barrierColor: Colors.yellow,
-              );
-            },
-            child: const Text('Tap'),
-          ),
-        ],
+        ),
       ),
     );
   }
