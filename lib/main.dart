@@ -65,7 +65,7 @@ class HomeActivity extends StatelessWidget {
                             onPressed: () {
                               // Your logic here.
                             },
-                            child: const Text('Tab Me Now'),
+                            child: const Text('Tap Me Now'),
                           ),
                         ],
                       ),
