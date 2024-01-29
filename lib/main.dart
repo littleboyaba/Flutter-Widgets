@@ -71,8 +71,13 @@ class HomeActivity extends StatelessWidget {
               decoration: InputDecoration(
                 enabled:
                     true, // use this to enable or disable your text field. it can be use in directly in TextField too.
-                label: Text("Name"),
+                label: Text("User Name"),
                 hintText: 'Enter your name',
+
+                // prefix: Text('ID: '),
+                // prefixIcon: Icon(Icons.abc),
+                // suffix: Text('SuffixText'),
+                // suffixIcon: Icon(Icons.remove_red_eye_sharp),
 
                 border: OutlineInputBorder(
                   borderSide: BorderSide(
