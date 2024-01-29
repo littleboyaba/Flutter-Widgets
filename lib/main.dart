@@ -24,51 +24,74 @@ class HomeActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('AppBar'),
-          backgroundColor: Colors.blue,
-          elevation: 3,
-          leading: const Icon(
-            Icons.home,
-            color: Colors.white,
-            size: 28,
-          ),
+      appBar: AppBar(
+        title: const Text('AppBar'),
+        backgroundColor: Colors.blue,
+        elevation: 3,
+        leading: const Icon(
+          Icons.home,
+          color: Colors.white,
+          size: 28,
         ),
-        //backgroundColor: Color(0xFF338930),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  print('Tapped on Hello Button');
-                },
-                onLongPress: () {
-                  print('You have long pressed Hello Button');
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey.shade400,
-                    foregroundColor: Colors.black54,
-                    // maximumSize: Size(300, 80),
-                    // minimumSize: Size(250, 40),
-                    // padding: EdgeInsets.all(16),
-                    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 32),
-                    // padding: EdgeInsets.only(left: 12, top: 24, right: 36, bottom: 48),
-                    elevation: 4,
-                    shadowColor: Colors.teal,
-                    textStyle: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white, // color won't work for "foregroundColor" as its set to black.
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    )),
-                child: Text('Hello'),
-              ),
-
-            ],
-          ),
-        ));
+      ),
+      //backgroundColor: Color(0xFF338930),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextButton(
+              onPressed: () {
+                print('Pressed on Text Button');
+              },
+              style: TextButton.styleFrom(
+                  backgroundColor: Colors.teal.shade300,
+                  foregroundColor: Colors.white,
+                  // maximumSize: Size(300, 50),
+                  // minimumSize: Size(250, 40),
+                  padding: EdgeInsets.all(20),
+                  // padding: EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+                  // padding: EdgeInsets.only(left: 12, top: 20, right: 12, bottom: 20),
+                  elevation: 3,
+                  shadowColor: Colors.blueGrey,
+                  textStyle: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                    color: Colors
+                        .red, // text color wont work here as foregroundColor set on above.
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  )),
+              child: Text("Text Button"),
+            ),
+            SizedBox(height: 20,),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.add),
+              style: IconButton.styleFrom(
+                  backgroundColor: Colors.green.shade200,
+                  foregroundColor: Colors.white70,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4),
+                  )),
+            ),
+            SizedBox(height: 20,),
+            FloatingActionButton(
+              onPressed: () {},
+              child: Text("FAB Button"),
+            ),
+            SizedBox(height: 20,),
+            FloatingActionButton.extended(
+              onPressed: () {},
+              label: Text("FAB Button"),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton.small(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
+    );
   }
 }
