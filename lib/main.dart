@@ -52,8 +52,8 @@ class HomeActivity extends StatelessWidget {
                     // maximumSize: Size(300, 80),
                     // minimumSize: Size(250, 40),
                     // padding: EdgeInsets.all(16),
-                    // padding: EdgeInsets.symmetric(vertical: 12, horizontal: 32),
-                    padding: EdgeInsets.only(left: 12, top: 24, right: 36, bottom: 48),
+                    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 32),
+                    // padding: EdgeInsets.only(left: 12, top: 24, right: 36, bottom: 48),
                     elevation: 4,
                     shadowColor: Colors.teal,
                     textStyle: TextStyle(
