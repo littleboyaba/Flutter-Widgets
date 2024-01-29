@@ -88,7 +88,8 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton.small(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.add),
       ),
