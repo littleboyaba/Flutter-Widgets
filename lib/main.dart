@@ -74,10 +74,10 @@ class HomeActivity extends StatelessWidget {
                 label: Text("User Name"),
                 hintText: 'Enter your name',
 
-                // prefix: Text('ID: '),
-                // prefixIcon: Icon(Icons.abc),
-                // suffix: Text('SuffixText'),
-                // suffixIcon: Icon(Icons.remove_red_eye_sharp),
+                prefix: Text('ID: '),
+                prefixIcon: Icon(Icons.abc),
+                suffix: Text('SuffixText'),
+                suffixIcon: Icon(Icons.remove_red_eye_sharp),
 
                 border: OutlineInputBorder(
                   borderSide: BorderSide(
