@@ -23,8 +23,6 @@ class HomeActivity extends StatelessWidget {
   // TextEditingController use to control textField
   final TextEditingController nameTextFieldController = TextEditingController();
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,55 +41,54 @@ class HomeActivity extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              controller: nameTextFieldController,
-              onTap: () {
-                print('TEXT FIELD TAPPED');
-              },
-              // you can set TextInputType in keyboardType.
-              keyboardType: TextInputType.text,
-              // onChanged used to validate text input. you can see the out put in console.
-              onChanged: (String input) {
-                print(input);
-              },
-              // textInputAction change keyboard Action Button.
-              textInputAction: TextInputAction.done,
-
-              // TextEditingController use case example.
-              onSubmitted: (String value){
-                print(nameTextFieldController.text);
-                nameTextFieldController.clear();
-              },
-
-              // use to hind text when user input it. like for password or other uses.
-              // obscureText: ture,
-              obscureText: false,
-
-              // Decoration
-              decoration: InputDecoration(
-                enabled:
-                    true, // use this to enable or disable your text field. it can be use in directly in TextField too.
-                label: Text("Name"),
-                hintText: 'Enter your name',
-
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color: Colors.green, width: 5, style: BorderStyle.solid),
+            Container(
+              /*
+              once you use decoration, you can't yes colors in container. you have to put in inside decoration.
+               */
+              // color: Colors.teal.shade200,
+              width: 500,
+              height: 200,
+              // margin: EdgeInsets.all(20),
+              // margin: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+              margin: EdgeInsets.only(left: 20, right: 10, top: 5, bottom: 20),
+              padding: EdgeInsets.all(25),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.teal.shade200,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(8),
+                  topRight: Radius.circular(16),
+                  bottomRight: Radius.circular(32),
                 ),
 
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color: Colors.purple, width: 5, style: BorderStyle.solid),
+                border: Border.all(
+                  color: Colors.purple,
+                  width: 4,
+                  style: BorderStyle.solid,
                 ),
 
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color: Colors.teal, width: 5, style: BorderStyle.solid),
-                ),
+                /*
+                if you want to use shape then you can't use borderRadius,
+                so keep that in kind.
+                 */
+                // shape: BoxShape.circle,
 
-                disabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color: Colors.red, width: 5, style: BorderStyle.solid),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.red,
+                    blurRadius: 7, // 7 or 8 is standard value
+                    offset: Offset(4, 3), // shadow position x and y axis.
+                  ),
+                ],
+              ),
+
+              child: Icon(Icons.android),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(30),
+              child: TextField(
+                decoration: InputDecoration(
+                  label: Text('Name'),
                 ),
               ),
             ),
