@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
 
 class HomeActivity extends StatelessWidget {
   HomeActivity({super.key});
+
   // TextEditingController use to control textField
   final TextEditingController nameTextFieldController = TextEditingController();
 
@@ -41,56 +42,66 @@ class HomeActivity extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              /*
-              once you use decoration, you can't yes colors in container. you have to put in inside decoration.
-               */
-              // color: Colors.teal.shade200,
-              width: 500,
-              height: 200,
-              // margin: EdgeInsets.all(20),
-              // margin: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-              margin: EdgeInsets.only(left: 20, right: 10, top: 5, bottom: 20),
-              padding: EdgeInsets.all(25),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.teal.shade200,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(8),
-                  topRight: Radius.circular(16),
-                  bottomRight: Radius.circular(32),
-                ),
-
-                border: Border.all(
-                  color: Colors.purple,
-                  width: 4,
-                  style: BorderStyle.solid,
-                ),
-
+            GestureDetector(
+              onTap: () {
+                print("Tapped On Container");
+              },
+              child: Container(
                 /*
-                if you want to use shape then you can't use borderRadius,
-                so keep that in kind.
+                once you use decoration, you can't yes colors in container. you have to put in inside decoration.
                  */
-                // shape: BoxShape.circle,
-
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.red,
-                    blurRadius: 7, // 7 or 8 is standard value
-                    offset: Offset(4, 3), // shadow position x and y axis.
+                // color: Colors.teal.shade200,
+                width: 500,
+                height: 200,
+                // margin: EdgeInsets.all(20),
+                // margin: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                margin:
+                    EdgeInsets.only(left: 20, right: 10, top: 5, bottom: 20),
+                padding: EdgeInsets.all(25),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Colors.teal.shade200,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(8),
+                    topRight: Radius.circular(16),
+                    bottomRight: Radius.circular(32),
                   ),
-                ],
-              ),
 
-              child: Icon(Icons.android),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(30),
-              child: TextField(
-                decoration: InputDecoration(
-                  label: Text('Name'),
+                  border: Border.all(
+                    color: Colors.purple,
+                    width: 4,
+                    style: BorderStyle.solid,
+                  ),
+
+                  /*
+                  if you want to use shape then you can't use borderRadius,
+                  so keep that in kind.
+                   */
+                  // shape: BoxShape.circle,
+
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.red,
+                      blurRadius: 7, // 7 or 8 is standard value
+                      offset: Offset(4, 3), // shadow position x and y axis.
+                    ),
+                  ],
                 ),
+
+                child: Icon(Icons.android),
               ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            InkWell(
+              onTap: (){
+                print("Tapped on Text");
+              },
+              splashColor: Colors.red,
+              highlightColor: Colors.green,
+              radius: 10,
+              child: Text("Tap On Me"),
             ),
           ],
         ),
