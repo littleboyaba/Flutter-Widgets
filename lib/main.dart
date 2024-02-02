@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,63 +15,171 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeActivity extends StatelessWidget {
-  final List<Map<String, dynamic>> myItems = [
-    {"Name": "Abu Baker", "City": "Raipur", "Age": 27},
-    {"Name": "John Doe", "City": "New York", "Age": 35},
-    {"Name": "Alice Smith", "City": "London", "Age": 28},
-    {"Name": "Ahmed Khan", "City": "Karachi", "Age": 32},
-    {"Name": "Elena Rodriguez", "City": "Barcelona", "Age": 30},
-    {"Name": "Mikhail Ivanov", "City": "Moscow", "Age": 29},
-    {"Name": "Sophia Kim", "City": "Seoul", "Age": 31},
-    {"Name": "Diego Hernandez", "City": "Mexico City", "Age": 33},
-    {"Name": "Aisha Patel", "City": "Mumbai", "Age": 26},
-    {"Name": "Yusuf Al-Farsi", "City": "Riyadh", "Age": 34},
-    {"Name": "Emma Johnson", "City": "Toronto", "Age": 25},
-    {"Name": "Hiroshi Tanaka", "City": "Tokyo", "Age": 36},
-    {"Name": "Isabella Martinez", "City": "Mexico City", "Age": 29},
-    {"Name": "Muhammad Rahman", "City": "Dhaka", "Age": 31},
-    {"Name": "Olivia Williams", "City": "Sydney", "Age": 27},
-    {"Name": "Mateo Silva", "City": "Buenos Aires", "Age": 30},
-    {"Name": "Lily Chen", "City": "Shanghai", "Age": 28},
-    {"Name": "Ravi Patel", "City": "Ahmedabad", "Age": 32},
-    {"Name": "Zara Ali", "City": "Dubai", "Age": 33},
-    {"Name": "Maxim Ivanov", "City": "St. Petersburg", "Age": 34},
-  ];
 
-  HomeActivity({super.key});
+  final List<Map<String, dynamic>> myItems = [
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 1",
+      "price": 19.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 2",
+      "price": 24.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 3",
+      "price": 14.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 4",
+      "price": 29.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 5",
+      "price": 39.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 6",
+      "price": 49.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 7",
+      "price": 34.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 8",
+      "price": 22.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 9",
+      "price": 19.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 10",
+      "price": 54.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 11",
+      "price": 29.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 12",
+      "price": 39.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 13",
+      "price": 44.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 14",
+      "price": 27.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 15",
+      "price": 19.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 16",
+      "price": 32.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 17",
+      "price": 49.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 18",
+      "price": 14.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 19",
+      "price": 37.99
+    },
+    {
+      "img":
+          "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Product 20",
+      "price": 23.99
+    },
+    // ... repeat for the remaining entries
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('GridView Product'),
         backgroundColor: Colors.green,
-        title: const Text('GridView'),
       ),
       body: GridView.builder(
-        scrollDirection: Axis.horizontal,
+        scrollDirection: Axis.vertical,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, crossAxisSpacing: 3),
+            crossAxisCount: 2,),
         itemCount: myItems.length,
-        itemBuilder: (BuildContext context, int index) {
+        itemBuilder: (BuildContext context, int index){
           return InkWell(
             onTap: (){
-              _mySnackBar(context, myItems[index]['Age']);
+              _mySnackBar(context, myItems[index]['title']);
             },
-            child: ListTile(
-              leading: const Icon(Icons.account_circle_outlined),
-              title: Text(myItems[index]['Name']),
-              subtitle: Text(myItems[index]['City']),
+            child: Card(
+              color: Colors.grey,
+              elevation: 2,
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.network(myItems[index]["img"], fit: BoxFit.cover,),
+                    Padding(padding: const EdgeInsets.all(6),child: Text("${myItems[index]["title"]}"),),
+                    Padding(padding: const EdgeInsets.all(6),child: Text("\$ ${myItems[index]["price"]}"),),
+                  ],
+                ),
             ),
           );
         },
+
       ),
     );
   }
 }
 
 void _mySnackBar(BuildContext context, msg){
-  final snackBar = SnackBar(content: Text('The Age is $msg'),
-    duration: const Duration(seconds: 2,),
-  );
+  final snackBar = SnackBar(content: Text('The title is $msg '),
+  duration: const Duration(seconds: 2),);
+
   ScaffoldMessenger.of(context).showSnackBar(snackBar);
 }
