@@ -24,6 +24,27 @@ class HomeActivity extends StatelessWidget {
   // TextEditingController use to control textField
   final TextEditingController nameTextFieldController = TextEditingController();
 
+  final List<Map<String, dynamic>> myItems = [
+    {"Name": "Abu Baker", "City": "Raipur", "Age": 27},
+    {"Name": "John Doe", "City": "New York", "Age": 35},
+    {"Name": "Alice Smith", "City": "London", "Age": 28},
+    {"Name": "Ahmed Khan", "City": "Karachi", "Age": 32},
+    {"Name": "Elena Rodriguez", "City": "Barcelona", "Age": 30},
+    {"Name": "Mikhail Ivanov", "City": "Moscow", "Age": 29},
+    {"Name": "Sophia Kim", "City": "Seoul", "Age": 31},
+    {"Name": "Diego Hernandez", "City": "Mexico City", "Age": 33},
+    {"Name": "Aisha Patel", "City": "Mumbai", "Age": 26},
+    {"Name": "Yusuf Al-Farsi", "City": "Riyadh", "Age": 34},
+    {"Name": "Alice Smith", "City": "London", "Age": 28},
+    {"Name": "Ahmed Khan", "City": "Karachi", "Age": 32},
+    {"Name": "Elena Rodriguez", "City": "Barcelona", "Age": 30},
+    {"Name": "Mikhail Ivanov", "City": "Moscow", "Age": 29},
+    {"Name": "Sophia Kim", "City": "Seoul", "Age": 31},
+    {"Name": "Diego Hernandez", "City": "Mexico City", "Age": 33},
+    {"Name": "Aisha Patel", "City": "Mumbai", "Age": 26},
+    {"Name": "Yusuf Al-Farsi", "City": "Riyadh", "Age": 34},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,81 +52,38 @@ class HomeActivity extends StatelessWidget {
         title: const Text('AppBar'),
         backgroundColor: Colors.blue,
         elevation: 3,
-        leading: const Icon(
-          Icons.home,
-          color: Colors.white,
-          size: 28,
-        ),
       ),
-      //backgroundColor: Color(0xFF338930),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            GestureDetector(
-              onTap: () {
-                print("Tapped On Container");
-              },
-              child: Container(
-                /*
-                once you use decoration, you can't yes colors in container. you have to put in inside decoration.
-                 */
-                // color: Colors.teal.shade200,
-                width: 500,
-                height: 200,
-                // margin: EdgeInsets.all(20),
-                // margin: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-                margin:
-                    EdgeInsets.only(left: 20, right: 10, top: 5, bottom: 20),
-                padding: EdgeInsets.all(25),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Colors.teal.shade200,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(8),
-                    topRight: Radius.circular(16),
-                    bottomRight: Radius.circular(32),
-                  ),
+      body: ListView.builder(
+        itemCount: myItems.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: Icon(Icons.star),
+            title: Text("Name: ${myItems[index]['Name']}"),
+            subtitle: Text("City: ${myItems[index]['City']},"),
+            onTap: (){_showAgeSnackBar(context, myItems[index]['Age']);
+            },
 
-                  border: Border.all(
-                    color: Colors.purple,
-                    width: 4,
-                    style: BorderStyle.solid,
-                  ),
-
-                  /*
-                  if you want to use shape then you can't use borderRadius,
-                  so keep that in kind.
-                   */
-                  // shape: BoxShape.circle,
-
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.red,
-                      blurRadius: 7, // 7 or 8 is standard value
-                      offset: Offset(4, 3), // shadow position x and y axis.
-                    ),
-                  ],
-                ),
-
-                child: Icon(Icons.android),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            InkWell(
-              onTap: (){
-                print("Tapped on Text");
-              },
-              splashColor: Colors.red,
-              highlightColor: Colors.green,
-              radius: 10,
-              child: Text("Tap On Me"),
-            ),
-          ],
-        ),
+          );
+        },
       ),
+      /* ListView(
+        children: [
+          ListTile(leading: Icon(Icons.star), title: Text("Item 01"), subtitle: Text("Item Description"), onTap: (){mySnackBar(context, 'Item 01');},),
+          ListTile(leading: Icon(Icons.star), title: Text("Item 02"), subtitle: Text("Item Description"), onTap: (){mySnackBar(context, 'Item 02');},),
+          ListTile(leading: Icon(Icons.star), title: Text("Item 03"), subtitle: Text("Item Description"), onTap: (){mySnackBar(context, 'Item 03');},),
+          ListTile(leading: Icon(Icons.star), title: Text("Item 04"), subtitle: Text("Item Description"), onTap: (){mySnackBar(context, 'Item 04');},),
+        ],
+      ),
+    */
     );
   }
 }
+
+void _showAgeSnackBar(BuildContext context, int age) {
+  final snackBar = SnackBar(
+    content: Text('The age is: $age'),
+    duration: Duration(seconds: 2), // You can adjust the duration as needed
+  );
+  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+}
+
