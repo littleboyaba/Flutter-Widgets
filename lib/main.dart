@@ -55,6 +55,26 @@ class HomeActivity extends StatelessWidget {
           mySnackBar(context, "I am Floating Action Button");
         },
       ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 2, // to set the default active item
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: "Contact"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+        ],
+        onTap: (int index){
+          if(index == 0){
+            mySnackBar(context, "I am Home bottom navigation bar");
+          }
+          if(index == 1){
+            mySnackBar(context, "I am Contact bottom navigation bar");
+          }
+          if(index == 2){
+            mySnackBar(context, "I am Profile bottom navigation bar");
+          }
+        },
+      ),
     );
   }
 }
