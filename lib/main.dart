@@ -26,6 +26,10 @@ class HomeActivity extends StatelessWidget {
         title: const Text('AppBar Title'),
         backgroundColor: Colors.blue,
         elevation: 3,
+        titleSpacing: 0,
+        centerTitle: true,
+        toolbarHeight: 40,
+        toolbarOpacity: 1,
         leading: const Icon(
           Icons.home,
           color: Colors.white,
