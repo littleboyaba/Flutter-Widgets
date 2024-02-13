@@ -61,15 +61,6 @@ class HomeActivity extends StatelessWidget {
       //backgroundColor: Color(0xFF338930),
       backgroundColor: Colors.white70,
       body: const Center(),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.green,
-        elevation: 10,
-        child: const Icon(Icons.add),
-        onPressed: () {
-          mySnackBar(context, "I am Floating Action Button");
-        },
-      ),
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 2, // to set the default active item
