@@ -19,6 +19,12 @@ class MyApp extends StatelessWidget {
 class HomeActivity extends StatelessWidget {
   const HomeActivity({super.key});
 
+  mySnackBar(context, message){
+    return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message)),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,15 +32,15 @@ class HomeActivity extends StatelessWidget {
         title: const Text('AppBar Title'),
         backgroundColor: Colors.blue,
         elevation: 3,
-        titleSpacing: 0,
-        centerTitle: true,
+        titleSpacing: 10,
         toolbarHeight: 40,
         toolbarOpacity: 1,
-        leading: const Icon(
-          Icons.home,
-          color: Colors.white,
-          size: 28,
-        ),
+        actions: [
+          IconButton(onPressed: () {mySnackBar(context, "I am Comment");}, icon: const Icon(Icons.comment)),
+          IconButton(onPressed: () {mySnackBar(context, "I am search");}, icon: const Icon(Icons.search)),
+          IconButton(onPressed: () {mySnackBar(context, "I am settings");}, icon: const Icon(Icons.settings)),
+          IconButton(onPressed: () {mySnackBar(context, "I am email");}, icon: const Icon(Icons.email)),
+        ],
       ),
       //backgroundColor: Color(0xFF338930),
       backgroundColor: Colors.white70,
