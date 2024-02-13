@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 class HomeActivity extends StatelessWidget {
   const HomeActivity({super.key});
 
-  mySnackBar(context, message){
+  mySnackBar(context, message) {
     return ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(message)),
     );
@@ -36,22 +36,37 @@ class HomeActivity extends StatelessWidget {
         toolbarHeight: 40,
         toolbarOpacity: 1,
         actions: [
-          IconButton(onPressed: () {mySnackBar(context, "I am Comment");}, icon: const Icon(Icons.comment)),
-          IconButton(onPressed: () {mySnackBar(context, "I am search");}, icon: const Icon(Icons.search)),
-          IconButton(onPressed: () {mySnackBar(context, "I am settings");}, icon: const Icon(Icons.settings)),
-          IconButton(onPressed: () {mySnackBar(context, "I am email");}, icon: const Icon(Icons.email)),
+          IconButton(
+              onPressed: () {
+                mySnackBar(context, "I am Comment");
+              },
+              icon: const Icon(Icons.comment)),
+          IconButton(
+              onPressed: () {
+                mySnackBar(context, "I am search");
+              },
+              icon: const Icon(Icons.search)),
+          IconButton(
+              onPressed: () {
+                mySnackBar(context, "I am settings");
+              },
+              icon: const Icon(Icons.settings)),
+          IconButton(
+              onPressed: () {
+                mySnackBar(context, "I am email");
+              },
+              icon: const Icon(Icons.email)),
         ],
       ),
       //backgroundColor: Color(0xFF338930),
       backgroundColor: Colors.white70,
-      body: const Center(
-      ),
+      body: const Center(),
       // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
         elevation: 10,
         child: const Icon(Icons.add),
-        onPressed: (){
+        onPressed: () {
           mySnackBar(context, "I am Floating Action Button");
         },
       ),
@@ -63,17 +78,60 @@ class HomeActivity extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.message), label: "Contact"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
         ],
-        onTap: (int index){
-          if(index == 0){
+        onTap: (int index) {
+          if (index == 0) {
             mySnackBar(context, "I am Home bottom navigation bar");
           }
-          if(index == 1){
+          if (index == 1) {
             mySnackBar(context, "I am Contact bottom navigation bar");
           }
-          if(index == 2){
+          if (index == 2) {
             mySnackBar(context, "I am Profile bottom navigation bar");
           }
         },
+      ),
+
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            const DrawerHeader(child: Text("Myrddin Wyllt")),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text("Home"),
+              onTap: () {
+                mySnackBar(context, "Drawer Home");
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.comment),
+              title: const Text("Contact"),
+              onTap: () {
+                mySnackBar(context, "Drawer Contact");
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: const Text("Profile"),
+              onTap: () {
+                mySnackBar(context, "Drawer Profile");
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.email),
+              title: const Text("Email"),
+              onTap: () {
+                mySnackBar(context, "Drawer Email");
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.phone),
+              title: const Text("Phone"),
+              onTap: () {
+                mySnackBar(context, "Drawer Phone");
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
