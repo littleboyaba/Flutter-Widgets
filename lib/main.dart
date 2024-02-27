@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 class HomeActivity extends StatelessWidget {
   HomeActivity({super.key});
   // TextEditingController use to control textField
-  final TextEditingController nameTextFieldController = TextEditingController();
+  final TextEditingController _nameTEController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class HomeActivity extends StatelessWidget {
           children: [
             Container(
               /*
-              once you use decoration, you can't yes colors in container. you have to put in inside decoration.
+              once you use decoration, you can't yes colors in container. you have to put it inside decoration.
                */
               // color: Colors.teal.shade200,
               width: 500,
@@ -87,6 +87,7 @@ class HomeActivity extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(30),
               child: TextField(
+                controller: _nameTEController,
                 decoration: InputDecoration(
                   label: Text('Name'),
                 ),
@@ -96,5 +97,5 @@ class HomeActivity extends StatelessWidget {
         ),
       ),
     );
+
   }
-}
