@@ -60,8 +60,6 @@ class HomeActivity extends StatelessWidget {
       ),
       //backgroundColor: Color(0xFF338930),
       backgroundColor: Colors.white70,
-      body: const Center(),
-
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 2, // to set the default active item
         items: const [
@@ -81,7 +79,6 @@ class HomeActivity extends StatelessWidget {
           }
         },
       ),
-
       endDrawer: Drawer(
         child: ListView(
           children: [
@@ -135,6 +132,7 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),
+      body: const Center(),
     );
   }
 }
